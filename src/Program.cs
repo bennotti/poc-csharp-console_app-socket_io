@@ -9,8 +9,9 @@ namespace poc_csharp_console_app_socket_io
     {
         public static async Task exec()
         {
-            var client = new SocketIO("http://localhost:8080/", new SocketIOOptions
+            var client = new SocketIO("http://localhost:8080/my-namespace", new SocketIOOptions
             {
+                Transport = SocketIOClient.Transport.TransportProtocol.WebSocket,
                 Query = new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("token", "abc123")
